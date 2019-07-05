@@ -1,8 +1,20 @@
-<h1>All Events</h1>
+<h1>Past Events</h1>
 <ul>
-<% @events.each do |event|%>
-<li><%= link_to (event.description), event_path(event.id) %></li>
+<% @past_events.each do |event|%>
+<li><%= event.date %> | <%= link_to (event.description), event_path(event.id) %></li>
 <% end %>
 </ul>
+
+<h1>Upcoming Events</h1>
+<ul>
+<% @upcoming_events.each do |event|%>
+<li><%= event.date %> | <%= link_to (event.description), event_path(event.id) %> 
+<% if not_attending? (event.id) %>
+<%= link_to "(attend)", attend_event_path(:id => event.id), method: :post %>
+<%end%>
+</li>
+<% end %>
+</ul>
+
 
 

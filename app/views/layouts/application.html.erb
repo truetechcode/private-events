@@ -7,9 +7,40 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <style>
+    body{
+      
+    }
+    nav, h1:first-child{
+      text-align: center;
+    }
+    nav ul li {
+      display: inline-block;
+    }
+    form label{
+      display: block;
+    }
+    form input{
+      display: block;
+      width: 200px;
+      margin: 10px 0px;
+    }
 
+    form textarea{
+      width: 200px;
+      height: 100px;
+      margin-bottom: 10px;      
+    }
+    </style>
+  </head>
   <body>
+  <h1>Private Events</h1>
+  <nav>
+  <ul>
+  <li><%= link_to "Profile", user_path(current_user.id) %></li>
+  <li><%= link_to "Events", events_path() %></li>
+  </ul>
+  </nav>
     <%= yield %>
   </body>
 </html>

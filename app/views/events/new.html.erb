@@ -3,5 +3,8 @@
   <%= f.label :description %>
   <%= f.text_area :description, placeholder: "The description of the event here...."  %>
 
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

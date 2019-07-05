@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'sessions#new'
+  # resources :events, :collection => {:attend => :post}
+  match "events/attend" => "events#attend", :via => :post, :as => :attend_event
   resources :events, only:[:new, :create, :index, :show]
   resources :sessions, only:[:new, :create]
   resources :users, only:[:new, :create, :index, :show]
