@@ -35,12 +35,14 @@
   </head>
   <body>
   <h1>Private Events</h1>
-  <nav>
-  <ul>
-  <li><%= link_to "Profile", user_path(current_user.id) %></li>
-  <li><%= link_to "Events", events_path() %></li>
-  </ul>
-  </nav>
+    <% if !current_user.nil? %>
+    <nav>
+    <ul>
+    <li><%= link_to "Profile", user_path(current_user.id) %></li>
+    <li><%= link_to "Events", events_path() %></li>
+    </ul>
+    </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
