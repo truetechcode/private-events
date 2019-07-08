@@ -7,15 +7,17 @@ before_action :signed_in?, only: [:show]
   end
 
   def new
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      # flash[:info] = "User has been created"
-      redirect_to root_url
+      redirect_to user_path(@user)
+      flash[:success] = "User has been created"
     else
       render 'new'
+      flash.now[:danger] = "User could not be created"
     end
   end
 
@@ -23,7 +25,7 @@ before_action :signed_in?, only: [:show]
 
   def signed_in?
     unless current_user
-      redirect_to new_session_path, notice: 'you are not signed in!'
+      redirect_to new_session_path, success: 'you are not signed in!'
     end
   end
 

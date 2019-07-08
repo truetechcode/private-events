@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'sessions#new'
-  # resources :events, :collection => {:attend => :post}
-  match "events/attend" => "events#attend", :via => :post, :as => :attend_event
+
+  match "events/attend" => "event_attendance#attend", :via => :post, :as => :attend_event
+  match "users/logout" => "sessions#destroy", :via => :get, :as => :users_logout
   resources :events, only:[:new, :create, :index, :show]
   resources :sessions, only:[:new, :create]
   resources :users, only:[:new, :create, :index, :show]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
