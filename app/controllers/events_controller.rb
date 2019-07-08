@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  
+  before_action :signed_in?, only: [:show, :new, :index, :create ]
+
 
   def new
     @event = Event.new
@@ -34,7 +35,13 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
   private
-    def post_params
+  def signed_in?
+    unless current_user
+      redirect_to new_session_path, notice: 'you are not signed in!'
+    end
+  end
+
+  def post_params
       params.require(:event).permit(:description, :date)
     end
 

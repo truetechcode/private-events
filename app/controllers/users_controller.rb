@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_action :signed_in?, only: [:show]
 
   def show
     @upcoming_events = current_user.upcoming_events
@@ -19,6 +20,12 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def signed_in?
+    unless current_user
+      redirect_to new_session_path, notice: 'you are not signed in!'
+    end
+  end
 
   def user_params
     params.require(:user).permit(:username, :email)

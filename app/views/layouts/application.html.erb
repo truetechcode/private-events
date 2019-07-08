@@ -31,6 +31,11 @@
       height: 100px;
       margin-bottom: 10px;      
     }
+    .alert{
+      /* text-align: center; */
+      font-weight: bold;
+      color: red;
+    }
     </style>
   </head>
   <body>
@@ -42,6 +47,9 @@
     <li><%= link_to "Events", events_path() %></li>
     </ul>
     </nav>
+    <% end %>
+        <% flash.each do |name, message| %>
+      <p class="alert"><i><%= "#{name}: #{message}" %></i></p>
     <% end %>
     <%= yield %>
   </body>
