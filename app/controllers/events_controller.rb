@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.created_events.build(post_params)
     if @event.save
-      EventAttendance.create(attendee_id: current_user.id, attended_event_id: @event.id)
+      #EventAttendance.create(attendee_id: current_user.id, attended_event_id: @event.id)
       redirect_to events_path
     else
       render 'new'
