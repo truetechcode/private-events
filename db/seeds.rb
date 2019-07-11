@@ -12,9 +12,6 @@ User.create!(username: "Example User",
 Event.create!(description:  "This is a fake event",
         date: Time.now,
         creator_id: 1)
-
-EventAttendance.create(attendee_id: 1, 
-        attended_event_id: 1)
     
 (1..5).each do |n|
   username  = Faker::Name.name
@@ -27,8 +24,6 @@ EventAttendance.create(attendee_id: 1,
   Event.create!(description:  description,
         date: date,
         creator_id: creator_id)
-  EventAttendance.create!(attendee_id: creator_id, 
-        attended_event_id: n+1)
 end
 
 (6..10).each do |n|
@@ -42,6 +37,4 @@ end
   Event.create!(description:  description,
         date: date,
         creator_id: creator_id)
-  EventAttendance.create!(attendee_id: creator_id, 
-        attended_event_id: n+1)
 end
