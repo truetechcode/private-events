@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Project Description
+---
+This project, is a light clone of Eventbrite. The main goal is to put in practice the main concepts of Associations in rails.
 
-Things you may want to cover:
+##Technology used
+---
+- Ruby on Rails
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Contributors
+---
+- [Raphael Noriode](https://github.com/Oghenebrume50)
+- [Terver Aosu](https://github.com/truetechcode)

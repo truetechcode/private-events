@@ -1,0 +1,8 @@
+<h1>Attendees</h1>
+
+
+<ul>
+<% @event.attendees.uniq.each do |attendee|%>
+<li><%= attendee.username %></li>
+<%end%>
+</ul>
