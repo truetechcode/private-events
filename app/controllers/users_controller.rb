@@ -4,6 +4,7 @@ before_action :signed_in?, only: [:show]
   def show
     @upcoming_events = current_user.upcoming_events
     @prev_events = current_user.previous_events
+    @created_events = current_user.created_events
   end
 
   def new
