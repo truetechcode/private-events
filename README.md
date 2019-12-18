@@ -1,8 +1,3 @@
-# README
-
-## Project Description
-This project, is a light clone of Eventbrite. The main goal is to put in practice the main concepts of Associations in rails.
-
 # PRIVATE EVENTS
 
 This project, is a light clone of Eventbrite. The main goal is to put in practice the main concepts of Associations in rails.
