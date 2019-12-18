@@ -37,7 +37,7 @@ Run the server with the following command:
 rails s
 ```
 
-Once its running, head over to your browser to [see Facebook clone](http://localhost:3000/).
+Once its running, head over to your browser to `http://localhost:3000/`.
 
 
 ### Running Tests
