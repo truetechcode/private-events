@@ -1,20 +1,23 @@
+<div class="col-12">
+<% if @past_events.size > 0 %>
 <h1>Past Events</h1>
 <ul>
 <% @past_events.each do |event|%>
 <li><%= event.date %> | <%= link_to (event.description), event_path(event.id) %></li>
 <% end %>
 </ul>
+<% end %>
 
+<% if @upcoming_events.size > 0 %>
 <h1>Upcoming Events</h1>
 <ul>
 <% @upcoming_events.each do |event|%>
 <li><%= event.date %> | <%= link_to (event.description), event_path(event.id) %> 
 <% if not_attending? (event.id) %>
-<%= link_to "(attend)", attend_event_path(:id => event.id), method: :post %>
+<%= link_to "attend", attend_event_path(:id => event.id), method: :post, class: "btn btn-primary" %>
 <%end%>
 </li>
 <% end %>
 </ul>
-
-
-
+<% end %>
+</div>
