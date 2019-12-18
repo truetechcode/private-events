@@ -60,7 +60,7 @@ You can deploy the project on [Heroku](https://www.heroku.com/) using the follow
 2. On the terminal, run `heroku create` to create a new app
 3. Run `git push heroku master` to start a deployment on Heroku.
 4. Run `heroku run rake db:migrate` to run migrations on your production database.
-5. Visit your project URL as assigned by Heroku to see a live deployment of Facebook clone.
+5. Visit your project URL as assigned by Heroku to see a live deployment.
 
 ## Authors
 
